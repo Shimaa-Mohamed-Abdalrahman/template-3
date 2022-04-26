@@ -1,0 +1,321 @@
+:root {--main-color: #76c38f;
+    --transparent-color: #303030;
+    --section-padding: 100px;
+    --write-color: #979797;}
+::selection {color: var(--main-color);
+    background-color: #fff;}
+* {margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;}
+html {scroll-behavior: smooth;}
+body {font-family: 'IBM Plex Serif', serif;
+    border-top: 4px solid var(--main-color);
+    background-image: url(../imgs/photo-1592743263126-bb241ee76ac7\ copy.jpg);
+    background-size: cover;}
+ul {list-style: none;}
+.container {padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;}
+@media (min-width: 768px) {
+    .container {width: 750px; }
+}
+@media (min-width: 992px) {
+    .container {width: 970px; }
+}
+@media (min-width: 1200px) {
+    .container {width: 1170px; }
+}
+/*.............header........................................................................*/
+header {position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 100;}
+header .container {display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    position: relative;}
+header .container .logo {text-decoration: none;
+    color: #fff;
+    font-size: xx-large;}
+header .container .logo::first-letter {color: var(--main-color);}
+header .container nav {flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;}
+header .container nav .toggle-menu {
+    color: #fff;
+    font-size: 22px;}
+@media (min-width: 768px) {
+    header .container nav .toggle-menu {display: none;}
+}
+header .container nav ul {display: flex;}
+@media (max-width: 767px) {
+    header .container nav ul {display: none;}
+    header .container nav .toggle-menu:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #979797a2;}
+    header .container nav .toggle-menu:hover + ul li a {padding: 15px;}
+}
+header .container nav ul li a {display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 10px 20px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2;}
+header .container nav ul li .active,
+header .container nav ul li a:hover {background-color: var(--main-color);
+    border-radius: 20px;}
+header .container nav .form {width: 40px;
+    color: #fff;
+    border-left: 1px solid #fff;
+    position: relative;
+    height: 30px;
+    margin-left: 30px;}
+header .container nav .form i {color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;}
+/*............landing..........................................................................*/
+.landing {min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;}
+.landing .container {position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: #fff;
+    padding: 90px 150px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;}
+@media (max-width: 1115px) {
+    .landing .container {padding-left: 40px;
+   padding-right: 40px; }
+   .landing .huge {padding: 50px 50px 0 25px;}
+   .landing .huge h2 {line-height: .7;}
+}
+@media (max-width:767px) {
+    .landing .image {display: none;}
+}
+.landing .huge {padding: 50px 100px 0 25px;}
+@media (max-width: 767px) {
+    .landing .huge {padding: 50px 0;}
+    .landing .container  {padding: 50px 20px;}
+    
+}
+.landing .container p {color: var(--write-color);
+    font-size: 14px;
+    padding-bottom: 40px;
+    line-height: 1.6;}
+.landing .container button {border: 0;
+    border-radius: 8px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;}
+.landing .container button:hover {background-color: #fff;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);}
+.landing .huge h2 {line-height: 1.4;
+    font-size: 40px;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 20px;}
+.landing .container .image {background-color: var(--write-color);
+    margin-right: 50px;
+    position: relative;
+    border-radius: 50%;}
+.landing .container .image img {border-radius: 50%;
+    padding: 5%;}
+.landing .container .image .overlay {position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #76c38ea6;
+    border-radius: 50%;
+    display: none;
+    text-align: center;}
+.landing .container .image .overlay i {margin: 43% 0;
+    background-color: #5e5b5ba8;
+    padding: 15px;
+    border-radius: 50%;}
+.landing .container .image:hover  .overlay{display: block;}
+.landing .change-background {position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--main-color);}
+@media (max-width:767px) {.landing .change-background {display: none;}}
+.landing .change-background:hover {color: #fff;
+    background-color: var(--main-color);
+    padding: 10px;
+    text-align: center;}
+.landing .left {left: 30px;}
+.landing .right {right: 30px;}
+/*..........service...............................................................*/
+.services {padding: 80px 0;
+    position: relative;}
+.services .container {display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;}
+.services .container .box {background-color: #fff;
+    padding: 30px;}
+.services .container .box i {color: var(--transparent-color);}
+.services .container .box h3 {color: var(--transparent-color);
+    font-size: 40px;
+    padding: 10px 10px 20px;}
+.services .container .box p {color: var(--write-color);
+    font-size: 14px;
+    line-height: 1.5;}
+.services .container .box:hover {background-color: var(--main-color);}
+.services .container .box:hover h3,
+.services .container .box:hover p,
+.services .container .box:hover i {color: #fff;}
+/*.........work.....................................................................................*/
+.work{padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    text-align: center;}
+.work span {color: #fff;
+    background-color: var(--transparent-color);
+    width: 250px;
+    display: inline-block;
+    top: -25px;
+    border-radius: 10px;
+    position: relative;
+    font-size: 40px;}
+.work .title {border-top: 4px solid var(--transparent-color);}
+.work .content-work {padding-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: center;}
+.work .content-work .late {padding: 8px 0;
+    position: relative;}
+.work .content-work .late img {max-width: 100%;
+    filter: grayscale(100%);
+    border: 6px solid #fff;
+    transition: 0.3s;}
+.work .content-work .late:hover img{filter: grayscale(0);
+    border-color: var(--main-color);
+    transition: 0.3s;}
+.work .content-work .late .text {position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    transition: 0.3s;
+    bottom: 14px;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    max-width: calc(100% - 12px);
+    color: #fff;
+    font-size: 18px;
+    transition: 0.5s;}
+.work .content-work .late:hover .text {display: none;
+    transition: 0.5s;}
+/*.........footer...........................................................................*/
+footer {background-color: var(--transparent-color);
+    padding-top: calc(var(--section-padding) - 30px);
+    padding-bottom: calc(var(--section-padding) - 50px);}
+footer .container {display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;}
+footer .container h4 {color: white;
+    margin-bottom: 35px;
+    font-weight: 100;
+    font-size: 25px;}
+footer .container .blog h3 {color: var(--main-color);
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 13px;}
+footer .container .blog h3 + span {color: #5e5b5b;
+    display: block;
+    font-size: small;
+    padding-bottom: 10px;}
+footer .container .blog h3 + span::before {content: "Admin";
+    color: var(--main-color);
+    font-size: 14px;}
+footer .container .blog span.adress {color: gray;
+    font-size: 9px;
+    padding-bottom: 10px;
+    display: block;
+    font-size: 19px;}
+footer .container .blog p {color: grey;
+    line-height: 1.4;}
+footer .container .blog a {display: block;
+    color: var(--main-color);
+    text-decoration: none;
+    padding-top: 10px;}
+footer .container .quick ul li {border-bottom: 1px solid rgb(83, 83, 83);
+    padding-top: 10px;
+    padding-bottom: 9px;
+    font-weight: 100;}
+footer .container .quick ul li i {font-size: 12px;
+    color: #5e5b5b;
+    padding-right: 3px;}
+footer .container .quick ul li a {text-decoration: none;
+    color: var(--main-color);
+    font-weight: 100px;
+    font-size: 17px;
+    display: block;}
+footer .container .latest p {color: gray;
+    padding-bottom: 15px;
+    line-height: 1.5;
+    font-size: 15px;}
+footer .container .latest p::before {content: "@namehere ";
+    cursor: pointer;
+    color: var(--main-color);}
+footer .container .contact .main-input {display: block;
+    background-color: #242424;
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    caret-color: var(--main-color);
+    color: gray;}
+footer .container .contact textarea.main-input {height: 100px;}
+footer .container .contact .main-input:focus {outline: none;}
+footer .container .contact input[type="submit"] {color: #242424;
+    cursor: pointer;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    border: 0;
+    padding: 7px 10px;
+    font-weight: 700;
+    text-transform: uppercase;}
+footer .container .contact input[type="submit"]:hover {color: var(--main-color);
+    border: 1px solid var(--main-color);
+    background-color: #242424;}
+/*.............foot..............................................................*/
+.foot hr {background-color: black;
+    border: 0;
+    height: 1px;}
+.foot {background-color: #242424;
+    position: relative;
+    color: #979797;}
+.foot .container {padding: 20px 0;}
+.link {background-color: rgba(240, 248, 255, 0.685);
+    color: var(--main-color);}
+.link .special {position: absolute;
+    bottom: 30px;
+    right: 60px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: var(--main-color);}
+.link .special:hover {background-color: rgba(255, 255, 255, 0.664);}
